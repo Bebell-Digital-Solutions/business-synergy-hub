@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synergy Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+      
+      // Tailwind CSS configuration
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: 'hsl(210, 40%, 50%)',
+                light: 'hsl(210, 40%, 60%)',
+                dark: 'hsl(210, 40%, 40%)',
+              },
+              bkg: {
+                  light: '#ffffff',
+                  dark: '#0f172a' // slate-900
+              },
+              content: {
+                  light: '#f1f5f9', // slate-100
+                  dark: '#1e293b' // slate-800
+              }
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.523.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-bkg-light dark:bg-bkg-dark text-slate-800 dark:text-slate-200 antialiased selection:bg-primary/20">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
