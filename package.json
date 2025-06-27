@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Bebell-Digital-Solutions.github.io/business-synergy-hub",
+  "homepage": "https://bebell-digital-solutions.github.io/business-synergy-hub/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
